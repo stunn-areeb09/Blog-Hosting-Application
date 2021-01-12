@@ -1,0 +1,35 @@
+{% extends 'blog/base.html'%}	
+
+{% block title %}
+Business blogs 
+{% endblock %}
+{% block content %}
+<section class="container">
+	{% for p in posts %}
+	<div class = 'list-group'>
+		<article>
+			<div class="media-body">
+				<div class="list-group">
+					<a href="#"> <strong>{{ p.author }}</strong></a>
+					<small> {{ p.date_posted }} </small>
+				</div>
+				<h2><a href="#"> {{ p.title }} </a></h2>
+				<p> {{ p.content }} </p>
+			</div>
+		</article>
+	</div>
+	{% endfor %}
+</section>
+<section class="container">
+	<form action="" method="post">
+		<p>
+			Please Submit your blog ;
+			<input type="text" name="url">
+		</p>
+		<button type="submit"> Submit</button>
+	</form>
+</section>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

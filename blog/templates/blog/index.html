@@ -1,0 +1,40 @@
+{% extends 'blog/base.html' %}
+{% block title %}
+Welcome
+{% endblock %}
+{% block content %}
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Hello, Blogers!</h1>
+        <p>This is my first complete project</p>
+        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+      </div>
+    </div>
+    {% if user.is_authenticated %}
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2>Business</h2>
+          <p>Lolzz made this </p>
+          <p><a class="btn btn-default" href="{% url 'business' %}" role="button">View details &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+          <h2> Sports</h2>
+          <p>Nothing here </p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+       </div>
+        <div class="col-md-4">
+          <h2>Entertainment</h2>
+          <p>Lollzz</p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div>
+      </div>
+      {% else %}
+      <div class="container">
+      <h1>Create an account to view and Post awesome blogs </h1>
+      </div>
+      {% endif %}
+      <hr>
+{% endblock %}

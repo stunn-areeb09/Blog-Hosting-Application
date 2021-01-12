@@ -1,0 +1,25 @@
+{% extends 'blog/base.html'%}
+
+{% block content %}
+	<div class="container">
+		<div class="row">
+			<div class="well well-sm">
+				<div class="row">
+					<div class="col-sm-6 col-md-6">
+						<img src="{{ user.profile.image.url }} " alt="" class = "image-rounded img-responsive">
+					</div>
+					<div class="col-sm-6 col-md-8">
+						<h4>{{ user.username }}</h4>
+					<p>
+						<i class="glyphicon glyphicon-envelope">
+							{{user.email}}
+						</i>
+					</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
+{% block footer %}
+{% endblock %}
