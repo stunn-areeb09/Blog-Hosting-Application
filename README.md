@@ -3,10 +3,7 @@ Blog Hosting Application using Django , DRF(Django Rest Framework) , HTML , CSS 
 
 # Requirements 
 `Django 2.2 and above 
-
 crispy forms 
-
 Django rest framework 3.9.3 and above 
-
 messages 2.24 or greater `
 
