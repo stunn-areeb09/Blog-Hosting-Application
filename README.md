@@ -13,12 +13,13 @@ Blog Hosting Application using Django , DRF(Django Rest Framework) , HTML , CSS 
   
 `$ python3 -m venv .venv && source .venv/bin/activate`  
 
-## Install the required dependencies  
+## Install the required dependencies in the requirements mentioned  
 
 ## Create the database with :  
 `$ python3 manage.py makemigrations`  
 `$ python3 manage.py makemigrations blog`  
 `$ python3 manage.py makemigrations users`  
+`$ python3 manage.py migrate`  
 
 ## Create a Super User with :  
 `$ python3 manage.py createsuperuser`  
