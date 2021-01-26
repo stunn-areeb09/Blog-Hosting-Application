@@ -22,6 +22,6 @@ def entertainment(request):
 def sports(request):
 	context 
 	{
-		'post' : S_Post.objects.all()
+		'posts' : S_Post.objects.all()
 	}
 	return render( request  , 'blog/sports.html' , context)

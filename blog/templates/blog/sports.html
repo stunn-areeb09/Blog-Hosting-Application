@@ -1,2 +1,39 @@
 {% extends 'blog/base.html' %}
 
+{% block title %}
+Sports blog
+{% endblock %}
+{% block content %}
+<section class="container">
+	{% for p in posts %}
+	<div class="list-group">
+		<article>
+			<div class="media-body">
+				<div class = "list-group">
+					<a href="#"> <strong> {{ p.author }} </strong> </a>
+					<small> {{ p.date_posted }} </small>
+				</div>
+				<h2>
+					<a href="#">
+						{{ p.title }}
+					</a>
+					<p>
+						{{ p.content }}
+					</p>
+				</h2>
+			</div>
+		</article>
+	</div>
+	{% endfor %}
+
+</section>
+<section class="container">
+	<form action="" method="post">
+		<p>
+			Please Submit your blog :
+			<input type="text" name="url">
+		</p>
+		<button type = "submit"> Submit</button>
+	</form>
+</section>
+{% endblock %}
