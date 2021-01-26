@@ -1,14 +1,27 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-# Create your views here.
 from .models import Post
+
 def index(request):
-	return render(request , 'blog/index.html')
-
-
+	return render( request , 'blog/index.html' )
 	
 def business(request):
-	context  ={
-	'posts' : Post.objects.all()
+	context  =
+	{
+		'posts' : Post.objects.all()
 	}
-	return render(request , 'blog/business.html' , context)
+	return render( request , 'blog/business.html' , context)
+
+def entertainment(request):
+	context = 
+	{
+		'posts' : E_Post.objects.all()
+	}
+	return render( request , 'blog/entertainment.html' , context )
+
+def sports(request):
+	context 
+	{
+		'post' : S_Post.objects.all()
+	}
+	return render( request  , 'blog/sports.html' , context)
