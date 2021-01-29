@@ -6,7 +6,7 @@ Sports blog
 {% block content %}
 <section class="container">
 	{% for p in posts %}
-	<div class="list-group">
+	<div class="list-group" >
 		<article>
 			<div class="media-body">
 				<div class = "list-group">
@@ -28,11 +28,15 @@ Sports blog
 
 </section>
 <section class="container">
-	<form method="post" action = "">
+	<form method="post" action = "/sports_post_add">
 		{% csrf_token %}
 		<p>
+			Title : 
+			<input type="text" name="sports_post_title"> </input>
+		</p>
+		<p>
 			Please Submit your blog :
-			<input type="text" name="url"></input>
+			<input type="text" name="sports_post_blog"></input>
 		</p>
 		<button type = "submit"> Submit </button>
 	</form>
