@@ -1,18 +1,18 @@
 {% extends 'blog/base.html' %}
 {% load crispy_forms_tags %}
-{% block content%}
+{% block content %}
 <div class="container">
 	<form method="POST">
 		{% csrf_token %}
 		<fieldset class="form-group"> 
 		<legend> Join Now !!</legend>
 		{{ form|crispy }}
-		<button type="submit"> Sign Up</button>
+		<button type="submit"> Sign Up </button>
 		</fieldset>
 	</form>
 	<div>
 		<small>
-			Already Have an Account? <a href="{% url  'login'%}"> Sign In</a>
+			Already Have an Account? <a href="{% url  'login' %}"> Sign In</a>
 		</small>
 	</div>
 </div>

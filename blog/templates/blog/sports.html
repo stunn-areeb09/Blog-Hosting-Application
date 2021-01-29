@@ -10,17 +10,17 @@ Sports blog
 		<article>
 			<div class="media-body">
 				<div class = "list-group">
-					<a href="#"> <strong> {{ p.author }} </strong> </a>
+					<a href="#" > <strong> {{ p.author }} </strong> </a>
 					<small> {{ p.date_posted }} </small>
 				</div>
 				<h2>
-					<a href="#">
+					<a href="#" >
 						{{ p.title }}
 					</a>
+				</h2>
 					<p>
 						{{ p.content }}
 					</p>
-				</h2>
 			</div>
 		</article>
 	</div>
@@ -28,12 +28,13 @@ Sports blog
 
 </section>
 <section class="container">
-	<form action="" method="post">
+	<form method="post" action = "">
+		{% csrf_token %}
 		<p>
 			Please Submit your blog :
-			<input type="text" name="url">
+			<input type="text" name="url"></input>
 		</p>
-		<button type = "submit"> Submit</button>
+		<button type = "submit"> Submit </button>
 	</form>
 </section>
 {% endblock %}

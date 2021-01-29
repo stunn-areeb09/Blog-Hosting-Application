@@ -20,11 +20,16 @@ Business blogs
 	</div>
 	{% endfor %}
 </section>
-<section class="container">
-	<form action="" method="post">
+<section class="container" >
+	<form action="business_post_add/" method="post">
+		{% csrf_token %}
 		<p>
-			Please Submit your blog ;
-			<input type="text" name="url"></input>
+			Title
+			<input type="text" name="business_post_title"> </input> 
+		</p>
+		<p>
+			Please Submit your blog:
+			<input type="text" name="business_post_content"> </input>
 		</p>
 		<button type="submit"> Submit</button>
 	</form>

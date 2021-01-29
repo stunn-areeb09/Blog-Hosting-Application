@@ -7,12 +7,14 @@ from django.conf.urls.static import static
 
 urlpatterns	 = [
 	path('' , views.index , name = 'index'),
-	path('business' , views.business , name = 'business'),
+	path('business/' , views.business , name = 'business'),
+	path('sports/' , views.sports , name = 'sports'),
 	path('register/' , user_views.register , name = 'register'),
 	path('register/redirect/' , views.index , name = 'redirect'),
 	path('login/' , auth_views.LoginView.as_view(template_name = 'users/login.html') , name = 'login'),
 	path('logout/' , auth_views.LogoutView.as_view(template_name = 'users/logout.html') , name = 'logout'),
 	path('profile/' , user_views.profile, name = 'profile'),
+	path('business/business_post_add/' , views.business_post_add , name = 'business_post_add'),
 ]
 
 if settings.DEBUG:
