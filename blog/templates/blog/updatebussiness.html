@@ -1,0 +1,17 @@
+{% extends 'blog/base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}
+Update Bussiness Blog 
+{% endblock %}
+
+{% block content %}
+<section class = 'container' , >
+	<form method = "post" action = "/">
+		{% csrf_token %}
+		{{ form|crispy }}
+		<button type = 'submit'> Submit </button>
+	</form>
+</section>
+{% endblock %}
+{% block footer %}
+{% endblock %}

@@ -3,6 +3,8 @@ from django.http import HttpResponse
 from .models import Post, S_Post, E_Post
 from django.contrib.auth.models import User
 from django.contrib import messages
+from .updatebusiness import update_bussiness
+
 def index(request):
 	return render( request , 'blog/index.html' )
 	
@@ -53,3 +55,14 @@ def entertainment_post_add(request):
 	entertianment.save()
 	messages.success( request , 'The blog with the  title %s is created successfully !! ' %entertainment_post_title)
 	return render ( request ,  'blog/index.html' )
+
+def updatebussiness(request):
+	form = update_bussiness()
+	if form.is_valid():
+		form.save()
+	context  = { 
+		'form' : form 
+	}
+	updated_title = form.cleaned_data['title']
+	messages.success( request , 'The blog with the title %s is updated successfully !!' %updated_title)
+	return render ( request , 'blog/updatebussiness.html' , context ) 

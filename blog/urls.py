@@ -18,6 +18,7 @@ urlpatterns	 = [
 	path('business/business_post_add/' , views.business_post_add , name = 'business_post_add'),
 	path('sports/sports_post_add/' , views.sports_post_add , name = 'sports_post_add'),
 	path('entertainment/entertainment_post_add/' , views.entertainment_post_add , name = 'entertainment_post_add'),
+	path('business/update_bussiness' , views.updatebussiness , name = 'updatebussiness'),
 ]
 
 if settings.DEBUG:

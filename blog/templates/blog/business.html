@@ -13,7 +13,7 @@ Business blogs
 					<a href="#"> <strong>{{ p.author }}</strong></a>
 					<small> {{ p.date_posted }} </small>
 				</div>
-				<h2><a href="#"> {{ p.title }} </a></h2>
+				<h2><a href="{% url 'updatebussiness' %}"> {{ p.title }} </a></h2>
 				<p> {{ p.content }} </p>
 			</div>
 		</article>
@@ -21,17 +21,17 @@ Business blogs
 	{% endfor %}
 </section>
 <section class="container" >
-	<form action="business_post_add/" method="post">
+	<form action = "business_post_add/" method="post">
 		{% csrf_token %}
 		<p>
 			Title
-			<input type="text" name="business_post_title"> </input> 
+			<input type = "text" name = "business_post_title" > </input> 
 		</p>
 		<p>
 			Please Submit your blog:
 			<input type="text" name="business_post_content"> </input>
 		</p>
-		<button class = "btn btn-primary btn-lg" type="submit"> Submit</button>
+		<button class = "btn btn-primary btn-lg" type="submit"> Submit </button>
 	</form>
 </section>
 {% endblock %}
