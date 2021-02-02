@@ -39,3 +39,12 @@ then run in the developement mode on port 8080 with :
 * `TIMEZONE` : Default `UTC`. Other examples are : `America/Buenos_Aires` .  
 * `LANGUAGE_CODE` : Default `en-us`. Other exmaples are : `es-ar` .   
 
+## Few Screenshots of the running server - 
+![alt text](https://github.com/stunn-areeb09/Blog-Hosting-Application/blob/main/screenshots/Screenshot%20(180).png "Index page")
+![alt text](https://github.com/stunn-areeb09/Blog-Hosting-Application/blob/main/screenshots/Screenshot%20(181).png "Login Page")
+![alt text](https://github.com/stunn-areeb09/Blog-Hosting-Application/blob/main/screenshots/Screenshot%20(182).png "Signed in page with user as areebnew")
+![alt text](https://github.com/stunn-areeb09/Blog-Hosting-Application/blob/main/screenshots/Screenshot%20(183).png "Business Blogs listing ")
+![alt text](https://github.com/stunn-areeb09/Blog-Hosting-Application/blob/main/screenshots/Screenshot%20(184).png "Profile page of the signedin user")
+![alt text](https://github.com/stunn-areeb09/Blog-Hosting-Application/blob/main/screenshots/Screenshot%20(185).png "New blog with title created in Bussiness category")
+![alt text](https://github.com/stunn-areeb09/Blog-Hosting-Application/blob/main/screenshots/Screenshot%20(186).png "Register button")
+![alt text](https://github.com/stunn-areeb09/Blog-Hosting-Application/blob/main/screenshots/Screenshot%20(187).png "After Registration Redirection")
