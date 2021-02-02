@@ -7,9 +7,9 @@ Blog Hosting Application using Django , DRF(Django Rest Framework) , HTML , CSS 
 `Django 2.2 `  
 `Django crispy forms 1.9.2`   
 `Django rest framework 3.9.3 `  
-`messages 2.24 ` 
-`requests 2.24.0`
-`Pillow 8.0.1`
+`messages 2.24 `   
+`requests 2.24.0`  
+`Pillow 8.0.1`  
 
 
 # Install and Run
