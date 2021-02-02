@@ -5,16 +5,21 @@ Blog Hosting Application using Django , DRF(Django Rest Framework) , HTML , CSS 
 # Requirements 
 `Python 3`  
 `Django 2.2 `  
-`crispy forms`   
+`Django crispy forms 1.9.2`   
 `Django rest framework 3.9.3 `  
-`messages 2.24 ` 
+`messages 2.24 `   
+`requests 2.24.0`  
+`Pillow 8.0.1`  
+
 
 # Install and Run
 ## *(Optional)* Create a virtual Environment and activate it with :  
   
 `$ python3 -m venv .venv && source .venv/bin/activate`  
 
-## Install the required dependencies in the requirements mentioned  
+## Install the required dependencies in the requirements mentioned  using the command Below   
+  
+ `pip3 install -r requirements.txt`
 
 ## Create the database with :  
 `$ python3 manage.py makemigrations`  
