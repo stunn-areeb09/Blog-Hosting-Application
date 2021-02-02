@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render , redirect
 from django.http import HttpResponse
 from .models import Post, S_Post, E_Post
 from django.contrib.auth.models import User
@@ -58,11 +58,15 @@ def entertainment_post_add(request):
 
 def updatebussiness(request):
 	form = update_bussiness()
-	if form.is_valid():
-		form.save()
+	if request.method == 'POST':
+		print( 'printing post' , request.POST)
+		updated_title = request.POST["title"]
+		form = update_bussiness(request.POST)
+		if form.is_valid():
+			form.save()
+			messages.success( request , 'The blog with the title %s is updated successfully !!' %updated_title)
+			return redirect('/')
 	context  = { 
 		'form' : form 
 	}
-	updated_title = form.cleaned_data['title']
-	messages.success( request , 'The blog with the title %s is updated successfully !!' %updated_title)
 	return render ( request , 'blog/updatebussiness.html' , context ) 

@@ -13,8 +13,14 @@ Business blogs
 					<a href="#"> <strong>{{ p.author }}</strong></a>
 					<small> {{ p.date_posted }} </small>
 				</div>
+				<h2> {{ p.author }} and {{ user.get_username }} </h2>
+				{% if p.author|string() == user.get_username|string() %}
 				<h2><a href="{% url 'updatebussiness' %}"> {{ p.title }} </a></h2>
 				<p> {{ p.content }} </p>
+				{% else %}
+				<h2><a href="#"> {{ p.title }} </a></h2>
+				<p> {{ p.content }} </p>
+				{% endif %}
 			</div>
 		</article>
 	</div>

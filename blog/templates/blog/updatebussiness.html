@@ -5,8 +5,8 @@ Update Bussiness Blog
 {% endblock %}
 
 {% block content %}
-<section class = 'container' , >
-	<form method = "post" action = "/">
+<section class = 'container' >
+	<form method = "post" action = "">
 		{% csrf_token %}
 		{{ form|crispy }}
 		<button type = 'submit'> Submit </button>

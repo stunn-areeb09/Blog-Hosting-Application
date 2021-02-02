@@ -4,5 +4,5 @@ from .models import Post
 class update_bussiness(ModelForm):
 	class Meta:
 		model  = Post
-		fields = '__all__'
+		fields = ['title' , 'content' , 'date_posted' ]
 		
