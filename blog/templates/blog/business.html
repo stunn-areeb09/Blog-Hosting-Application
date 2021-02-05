@@ -9,7 +9,7 @@ Business blogs
 	<div class = 'list-group'>
 		<article>
 			<div class="media-body">
-				{% if user.username|stringformat:"s" ==  p.author|stringformat:"s" %}
+				{%  if user.username|stringformat:"s" ==  p.author|stringformat:"s"  %}
 				<div class="list-group">
 					<a href="#"> <strong>{{ p.author }}</strong></a>
 					<small> {{ p.date_posted }} </small>
