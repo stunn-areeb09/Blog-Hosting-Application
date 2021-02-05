@@ -56,12 +56,13 @@ def entertainment_post_add(request):
 	messages.success( request , 'The blog with the  title %s is created successfully !! ' %entertainment_post_title)
 	return render ( request ,  'blog/index.html' )
 
-def updatebussiness(request):
-	form = update_bussiness()
+def updatebussiness( request , pk ):
+	current_post = Post.objects.get( id = pk )
+	form = update_bussiness(instance = current_post)
+	
 	if request.method == 'POST':
-		print( 'printing post' , request.POST)
 		updated_title = request.POST["title"]
-		form = update_bussiness(request.POST)
+		form = update_bussiness(request.POST , instance = current_post)
 		if form.is_valid():
 			form.save()
 			messages.success( request , 'The blog with the title %s is updated successfully !!' %updated_title)
