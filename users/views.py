@@ -13,7 +13,7 @@ def register(request):
 	else:
 		form  = UserRegisterForm()
 	return render(request , 'users/register.html' , {'form' : form} ) 
-# Create your views here.
+
 @login_required
 def profile(request):
 	return render(request , 'users/profile.html')

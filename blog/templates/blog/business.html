@@ -9,12 +9,21 @@ Business blogs
 	<div class = 'list-group'>
 		<article>
 			<div class="media-body">
+				{% if user.username|stringformat:"s" ==  p.author|stringformat:"s" %}
 				<div class="list-group">
 					<a href="#"> <strong>{{ p.author }}</strong></a>
 					<small> {{ p.date_posted }} </small>
 				</div>
 				<h2><a href="{% url 'updatebussiness' p.id %}"> {{ p.title }} </a></h2>
 				<p> {{ p.content }} </p>
+				{% else %}
+				<div class="list-group">
+				<a href="#"> <strong>{{ p.author }}</strong></a>
+				<small> {{ p.date_posted }} </small>
+				</div>
+				<h2><a href="#"> {{ p.title }} </a></h2>
+				<p> {{ p.content }} </p>
+				{% endif %}
 			</div>
 		</article>
 	</div>
