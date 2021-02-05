@@ -59,9 +59,9 @@ def entertainment_post_add(request):
 def updatebussiness( request , pk ):
 	current_post = Post.objects.get( id = pk )
 	form = update_bussiness(instance = current_post)
-	
+	updated_title = current_post.title
 	if request.method == 'POST':
-		updated_title = request.POST["title"]
+		#updated_title = request.POST["title"]
 		form = update_bussiness(request.POST , instance = current_post)
 		if form.is_valid():
 			form.save()
