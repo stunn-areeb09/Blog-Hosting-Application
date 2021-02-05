@@ -9,18 +9,21 @@ Sports blog
 	<div class="list-group" >
 		<article>
 			<div class="media-body">
-				<div class = "list-group">
-					<a href="#" > <strong> {{ p.author }} </strong> </a>
+				{%  if user.username|stringformat:"s" ==  p.author|stringformat:"s"  %}
+				<div class="list-group">
+					<a href="#"> <strong>{{ p.author }}</strong></a>
 					<small> {{ p.date_posted }} </small>
 				</div>
-				<h2>
-					<a href="#" >
-						{{ p.title }}
-					</a>
-				</h2>
-					<p>
-						{{ p.content }}
-					</p>
+				<h2><a href="{% url 'updatesports' p.id %}"> {{ p.title }} </a></h2>
+				<p> {{ p.content }} </p>
+				{% else %}
+				<div class="list-group">
+				<a href=""> <strong>{{ p.author }}</strong></a>
+				<small> {{ p.date_posted }} </small>
+				</div>
+				<h2><a href=""> {{ p.title }} </a></h2>
+				<p> {{ p.content }} </p>
+				{% endif %}
 			</div>
 		</article>
 	</div>
@@ -28,7 +31,7 @@ Sports blog
 
 </section>
 <section class="container">
-	<form method="post" action = "/sports_post_add">
+	<form action = "sports_post_add/"method="post" >
 		{% csrf_token %}
 		<p>
 			Title : 

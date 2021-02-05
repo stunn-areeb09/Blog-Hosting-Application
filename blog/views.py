@@ -4,7 +4,8 @@ from .models import Post, S_Post, E_Post
 from django.contrib.auth.models import User
 from django.contrib import messages
 from .updatebusiness import update_bussiness
-
+from .updatesports import update_sports
+from .updateentertainment import update_entertainment
 def index(request):
 	return render( request , 'blog/index.html' )
 	
@@ -37,7 +38,7 @@ def business_post_add(request):
 	return render( request , 'blog/index.html' )
 
 def sports_post_add(request):
-	sports_post_content = request.POST["sports_post_content"]
+	sports_post_content = request.POST["sports_post_blog"]
 	sports_post_title = request.POST["sports_post_title"]
 	if request.user.is_authenticated:
 		sports_post_user = request.user
@@ -65,9 +66,39 @@ def updatebussiness( request , pk ):
 		form = update_bussiness(request.POST , instance = current_post)
 		if form.is_valid():
 			form.save()
-			messages.success( request , 'The blog with the title %s is updated successfully !!' %updated_title)
+			messages.success( request , 'The blog with the title {} is updated successfully in business Category by user {} !!'.format(updated_title , request.user))
 			return redirect('/')
 	context  = { 
 		'form' : form 
 	}
 	return render ( request , 'blog/updatebussiness.html' , context ) 
+
+def updatesports(request , pk ):
+	current_post = S_Post.objects.get( id = pk )
+	form = update_sports( instance = current_post)
+	updated_title = current_post.title
+	if request.method == 'POST':
+		form = update_sports(request.POST , instance = current_post)
+		if form.is_valid():
+			form.save()
+			messages.success( request , 'The blog with the title {} is updated successfully in Sports Category by user {} !!'.format(updated_title , request.user))
+			return redirect('/')
+	context = {
+		'form' : form
+	}
+	return render (request , 'blog/updatesports.html' , context)
+
+def updateentertainment(request , pk):
+	current_post = E_Post.objects.get( id  = pk )
+	form = update_entertainment( instance = current_post)
+	updated_title = current_post.title
+	if request.method == 'POST':
+		form = update_sports(request.POST , instance = current_post)
+		if form.is_valid():
+			form.save()
+			messages.success( request , 'The blog with the title {} is updated successfully in Entertianment Category by user {} !!'.format(updated_title , request.user))
+			return redirect('/')
+	context = {
+		'form' : form
+	}
+	return render (request , 'blog/updateentertainment.html' , context )

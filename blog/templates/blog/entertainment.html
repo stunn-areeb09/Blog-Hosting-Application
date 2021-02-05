@@ -10,19 +10,21 @@ Entertainment Blog
 	<div class = "list-group">
 		<article>
 			<div class="media-body">
-				<div class ="list-group">
-					<a href="#"><strong> {{ p.author }} </strong> </a>
-					<small> {{ p.date_posted }}</small>
+				{%  if user.username|stringformat:"s" ==  p.author|stringformat:"s"  %}
+				<div class="list-group">
+					<a href="#"> <strong>{{ p.author }}</strong></a>
+					<small> {{ p.date_posted }} </small>
 				</div>
-				<h2>
-					<a href="#">
-						{{ p.title }}
-					</a>
-				</h2>
-					<p>
-						{{ p.content }}
-					</p>
-				
+				<h2><a href="{% url 'updateentertainment' p.id %}"> {{ p.title }} </a></h2>
+				<p> {{ p.content }} </p>
+				{% else %}
+				<div class="list-group">
+				<a href=""> <strong>{{ p.author }}</strong></a>
+				<small> {{ p.date_posted }} </small>
+				</div>
+				<h2><a href=""> {{ p.title }} </a></h2>
+				<p> {{ p.content }} </p>
+				{% endif %}
 			</div>
 		</article>
 	</div>

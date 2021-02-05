@@ -19,6 +19,8 @@ urlpatterns	 = [
 	path('sports/sports_post_add/' , views.sports_post_add , name = 'sports_post_add'),
 	path('entertainment/entertainment_post_add/' , views.entertainment_post_add , name = 'entertainment_post_add'),
 	path('business/update_bussiness/<str:pk>/' , views.updatebussiness , name = 'updatebussiness'),
+	path('sports/update_sports/<str:pk>/' , views.updatesports , name = 'updatesports'),
+	path('entertainment/update_entertainment/<str:pk>/' , views.updateentertainment , name = 'updateentertainment'),
 ]
 
 if settings.DEBUG:
