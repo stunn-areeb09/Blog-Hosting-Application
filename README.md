@@ -48,4 +48,7 @@ then run in the developement mode on port 8080 with :
 ![alt text](https://github.com/stunn-areeb09/Blog-Hosting-Application/blob/main/screenshots/Screenshot%20(185).png "New blog with title created in Bussiness category")
 ![alt text](https://github.com/stunn-areeb09/Blog-Hosting-Application/blob/main/screenshots/Screenshot%20(186).png "Registration page")
 ![alt text](https://github.com/stunn-areeb09/Blog-Hosting-Application/blob/main/screenshots/Screenshot%20(187).png "After Registration Redirection")
+![alt text](https://github.com/stunn-areeb09/Blog-Hosting-Application/blob/main/screenshots/Screenshot%20(192).png "Bussiness Post updating Page")
+![alt text](https://github.com/stunn-areeb09/Blog-Hosting-Application/blob/main/screenshots/Screenshot%20(193).png "Message Confirmation of the updated page")
 ![alt text](https://github.com/stunn-areeb09/Blog-Hosting-Application/blob/main/screenshots/Screenshot%20(189).png "Models")
+
