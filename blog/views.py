@@ -102,3 +102,18 @@ def updateentertainment(request , pk):
 		'form' : form
 	}
 	return render (request , 'blog/updateentertainment.html' , context )
+
+def deletebussiness( request  , pk ):
+	current_post = Post.objects.get( id = pk )
+	if request.method == 'POST':
+		deleted_title = current_post.title
+		current_post.delete()
+		messages.success( request , 'The blog with the title {} is deleted successfully in Business Category by user {} !!'.format(deleted_title , request.user) )
+		return redirect('/')
+	context = {
+		'posts' : current_post
+	}
+	return render( request , 'blog/deletebussiness.html' , context )
+
+def deletebussinessafter( request ):
+	return render( request , 'blog/business.html' )
