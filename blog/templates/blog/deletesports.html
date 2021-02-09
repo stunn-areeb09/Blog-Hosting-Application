@@ -1,0 +1,14 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<section class = "container" >
+	<div class="media-body">
+		<h2> Are u sure u want to delete the Post with title {{ posts }} ? </h2>
+		<form action = "{% url 'deletesports' posts.id %}" method = "POST">
+			{% csrf_token %}
+			<p><a class = "btn btn-success" href = "{% url 'sports' %}" role = "button"> Cancel </a></p>
+			<button class = "btn btn-primary" type="submit"> Submit </button>
+		</form>
+	</div>
+</section>
+{% endblock %}

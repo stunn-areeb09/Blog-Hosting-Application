@@ -115,5 +115,26 @@ def deletebussiness( request  , pk ):
 	}
 	return render( request , 'blog/deletebussiness.html' , context )
 
-def deletebussinessafter( request ):
-	return render( request , 'blog/business.html' )
+def deletesports(request , pk):
+	current_post = S_Post.objects.get(id = pk)
+	if request.method == 'POST':
+		deleted_title = current_post.title
+		current_post.delete()
+		messages.success( request , 'The blog with the title {} is deleted successfully in Sports Category by user {} !!'.format(deleted_title , request.user)  )
+		return redirect('/')
+	context = {
+		'posts' : current_post
+	}
+	return render( request , 'blog/deletesports.html' , context )
+
+def deleteentertainment( request , pk ):
+	current_post = E_Post.objects.get( id = pk )
+	if request.method == 'POST':
+		deleted_title = current_post.title
+		current_post.delete()
+		messages.success( request , 'The blog with the title {} is deleted successfully in Sports Category by user {} !!'.format(deleted_title , request.user))
+		return redirect('/')
+	context = {
+		'posts' : current_post
+	}
+	return render( request , 'blog/deleteentertainment.html' , context )

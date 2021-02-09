@@ -20,6 +20,8 @@ urlpatterns	 = [
 	path('entertainment/entertainment_post_add/' , views.entertainment_post_add , name = 'entertainment_post_add'),
 	path('business/update_bussiness/<str:pk>/' , views.updatebussiness , name = 'updatebussiness'),
 	path('business/delete_bussiness/<str:pk>/' , views.deletebussiness , name = 'deletebussiness'),
+	path('sports/delete_sports/<str:pk>/' , views.deletesports , name = 'deletesports'),
+	path('entertainment/delete_entertainment/<str:pk>/' , views.deleteentertainment , name = 'deleteentertainment'),
 	path('sports/update_sports/<str:pk>/' , views.updatesports , name = 'updatesports'),
 	path('entertainment/update_entertainment/<str:pk>/' , views.updateentertainment , name = 'updateentertainment'),
 ]
